@@ -1,0 +1,18 @@
+source ~/astronvim-dotfiles/.vimrc
+
+" Do incremental searching.
+set incsearch
+
+" Useful for formatting
+set textwidth=100
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" See: https://youtrack.jetbrains.com/issue/VIM-186/gq-does-not-reformat-word-wrap-comments#focus=Comments-27-4355985.0-0
+nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+
+" esc in insert & visual mode
+inoremap jk <esc>
+vnoremap jk <esc>
