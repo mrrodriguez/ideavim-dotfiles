@@ -3,8 +3,8 @@ source ~/astronvim-dotfiles/.vimrc
 " Do incremental searching.
 set incsearch
 
-" Useful for formatting
-set textwidth=100
+" Useful for formatting (but not for SQL)
+autocmd FileType * if &filetype != 'sql' | set textwidth=100 | else | set textwidth=0 | endif
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -16,3 +16,6 @@ vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 " esc in insert & visual mode
 inoremap jk <esc>
 vnoremap jk <esc>
+
+" See: https://stackoverflow.com/a/27928635/924604
+set clipboard+=unnamed
