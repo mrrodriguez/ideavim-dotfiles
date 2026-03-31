@@ -1,5 +1,9 @@
 source ~/astronvim-dotfiles/.vimrc
 
+" Relative line numbers (lua-based neovim config can't be sourced by IdeaVim)
+set number
+set relativenumber
+
 " Do incremental searching.
 set incsearch
 
